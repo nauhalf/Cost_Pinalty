@@ -1,18 +1,17 @@
 package com.example.loanpinalty.main;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.CalendarView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.loanpinalty.R;
 import com.example.loanpinalty.data.local.LocalData;
 import com.example.loanpinalty.data.model.Loan;
-import com.example.loanpinalty.databinding.ActivityMainBinding;
 import com.example.loanpinalty.detail.DetailActivity;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.textfield.TextInputEditText;
 import com.orhanobut.hawk.Hawk;
 
 import java.util.Calendar;
@@ -21,12 +20,13 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ActivityMainBinding binding;
+    private MaterialButton btnSave;
+    private TextInputEditText etValue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        setContentView(R.layout.activity_main);
         //init Hawk for LocalData
         Hawk.init(this).build();
 
@@ -39,11 +39,15 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
     private void setUp() {
+
+        btnSave = findViewById(R.id.btnSave);
+        etValue = findViewById(R.id.etValue);
         //onclick event
-        binding.btnSave.setOnClickListener(v -> {
+        btnSave.setOnClickListener(v -> {
             // get value from input
-            String value = binding.etValue.getText().toString();
+            String value = etValue.getText().toString();
 
             //if empty show toast message
             if (value.isEmpty()) {

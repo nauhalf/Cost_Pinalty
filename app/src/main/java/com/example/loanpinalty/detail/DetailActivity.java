@@ -1,29 +1,30 @@
 package com.example.loanpinalty.detail;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.loanpinalty.R;
 import com.example.loanpinalty.data.local.LocalData;
 import com.example.loanpinalty.data.model.Loan;
-import com.example.loanpinalty.databinding.ActivityDetailBinding;
 import com.example.loanpinalty.main.MainActivity;
 import com.example.loanpinalty.utils.Tools;
+import com.google.android.material.button.MaterialButton;
 import com.orhanobut.hawk.Hawk;
 
 import java.util.Date;
 
 public class DetailActivity extends AppCompatActivity {
 
-    private ActivityDetailBinding binding;
     private Loan loan;
+    private MaterialButton btnPay;
+    private TextView tvCostValue, tvCreatedDateValue, tvPinaltyDayValue, tvPenaltyCostValue, tvTotalValue;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_detail);
+        setContentView(R.layout.activity_detail);
 
         //init Hawk for LocalData
         Hawk.init(this).build();
@@ -37,36 +38,43 @@ public class DetailActivity extends AppCompatActivity {
             Intent intent = new Intent(this, MainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
+            finish();
         }
         setUp();
     }
 
     private void setUp(){
 
+        btnPay = findViewById(R.id.btnPay);
+        tvCostValue = findViewById(R.id.tvCostValue);
+        tvCreatedDateValue = findViewById(R.id.tvCreatedDateValue);
+        tvPinaltyDayValue = findViewById(R.id.tvPinaltyDayValue);
+        tvPenaltyCostValue = findViewById(R.id.tvPenaltyCostValue);
+        tvTotalValue =  findViewById(R.id.tvTotalValue);
         //set onclick event
-        binding.btnPay.setOnClickListener(v -> {
+        btnPay.setOnClickListener(v -> {
 
             //delete loan
             LocalData.deleteLoan();
 
             //back to main activity
             Intent intent = new Intent(this, MainActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
+            finish();
         });
 
 
         //show loan value
-        binding.tvCostValue.setText(Tools.getPriceFormat(loan.getValue(), true));
+        tvCostValue.setText(Tools.getPriceFormat(loan.getValue(), true));
 
         //show loan created date
-        binding.tvCreatedDateValue.setText(Tools.formatDate(loan.getCreatedAt()));
+        tvCreatedDateValue.setText(Tools.formatDate(loan.getCreatedAt()));
 
         //calculate differences days between today and loan created at
         int diff = Tools.getDiffDay(new Date(), loan.getCreatedAt());
 
         //show differences days as penalty day
-        binding.tvPinaltyDayValue.setText(getString(R.string.pinalty_days, diff));
+        tvPinaltyDayValue.setText(getString(R.string.pinalty_days, diff));
 
         //calculate pinalty cost based on pinalty day times loan cost
         double pinaltyCost = loan.getValue() * diff;
@@ -75,10 +83,10 @@ public class DetailActivity extends AppCompatActivity {
         double totalCost = loan.getValue() + pinaltyCost;
 
         //show pinalty cost value
-        binding.tvPenaltyCostValue.setText(Tools.getPriceFormat(pinaltyCost, true));
+        tvPenaltyCostValue.setText(Tools.getPriceFormat(pinaltyCost, true));
 
         //show total loan
-        binding.tvTotalValue.setText(Tools.getPriceFormat(totalCost, true));
+        tvTotalValue.setText(Tools.getPriceFormat(totalCost, true));
 
 
 
