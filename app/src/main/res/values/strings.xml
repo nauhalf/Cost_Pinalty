@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Loan Pinalty</string>
+    <string name="pinalty_days">%d day(s)</string>
+</resources>

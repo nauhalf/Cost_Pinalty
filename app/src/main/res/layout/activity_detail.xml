@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        tools:context=".detail.DetailActivity">
+
+        <TextView
+            android:id="@+id/tvCostTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Loan Cost : "
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tvCostValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/tvCostTitle"
+            app:layout_constraintTop_toTopOf="@id/tvCostTitle" />
+
+
+        <TextView
+            android:id="@+id/tvCreatedDateTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Created At : "
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvCostTitle" />
+
+
+        <TextView
+            android:id="@+id/tvCreatedDateValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/tvCreatedDateTitle"
+            app:layout_constraintTop_toTopOf="@id/tvCreatedDateTitle" />
+
+
+        <TextView
+            android:id="@+id/tvPinaltyDayTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pinalty Day : "
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvCreatedDateTitle" />
+
+
+        <TextView
+            android:id="@+id/tvPinaltyDayValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/tvPinaltyDayTitle"
+            app:layout_constraintTop_toTopOf="@id/tvPinaltyDayTitle" />
+
+
+        <TextView
+            android:id="@+id/tvPenaltyCostTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pinalty Cost : "
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvPinaltyDayTitle" />
+
+
+        <TextView
+            android:id="@+id/tvPenaltyCostValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/tvPenaltyCostTitle"
+            app:layout_constraintTop_toTopOf="@id/tvPenaltyCostTitle" />
+
+        <TextView
+            android:id="@+id/tvTotalTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total : "
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvPenaltyCostTitle" />
+
+
+        <TextView
+            android:id="@+id/tvTotalValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/tvTotalTitle"
+            app:layout_constraintTop_toTopOf="@id/tvTotalTitle" />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pay"
+            android:id="@+id/btnPay"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTotalTitle" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
