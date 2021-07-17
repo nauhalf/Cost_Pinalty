@@ -4,6 +4,8 @@ import android.annotation.SuppressLint;
 
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
+import java.time.temporal.ChronoUnit;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 import java.util.UUID;
@@ -27,8 +29,23 @@ public class Tools {
 
     public static int getDiffDay(Date from, Date to){
 
+        //cutoff time information
+        final Calendar fromCalendar = Calendar.getInstance();
+        fromCalendar.setTime(from);
+        fromCalendar.set(Calendar.HOUR_OF_DAY, 0);
+        fromCalendar.set(Calendar.MINUTE, 0);
+        fromCalendar.set(Calendar.SECOND, 0);
+        fromCalendar.set(Calendar.MILLISECOND, 0);
+
+        //cutoff time information
+        final Calendar toCalendar = Calendar.getInstance();
+        toCalendar.setTime(to);
+        toCalendar.set(Calendar.HOUR_OF_DAY, 0);
+        toCalendar.set(Calendar.MINUTE, 0);
+        toCalendar.set(Calendar.SECOND, 0);
+        toCalendar.set(Calendar.MILLISECOND, 0);
         //Comparing dates
-        long difference = Math.abs(from.getTime() - to.getTime());
+        long difference = Math.abs(fromCalendar.getTime().getTime() - toCalendar.getTime().getTime());
         long differenceDates = difference / (24 * 60 * 60 * 1000);
 
         //Convert long to String
