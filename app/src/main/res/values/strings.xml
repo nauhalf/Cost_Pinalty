@@ -1,4 +1,15 @@
 <resources>
-    <string name="app_name">Loan Pinalty</string>
+    <string name="app_name">Library</string>
     <string name="pinalty_days">%d day(s)</string>
+    <string name="denda_sewa">Denda Sewa</string>
+    <string name="nama">Nama</string>
+    <string name="nama_buku">Nama Buku : </string>
+    <string name="nama_buku_2">Nama Buku</string>
+    <string name="kembalikan">Kembalikan</string>
+    <string name="denda_harian">Denda Harian :</string>
+    <string name="total_denda">Total Denda :</string>
+    <string name="tanggal_pinjam">Tanggal Pinjam :</string>
+    <string name="total_hari_pinjam">Total Hari Pinjam :</string>
+    <string name="nama_peminjam">Nama Peminjam :</string>
+    <string name="total_denda_2">Total Denda</string>
 </resources>

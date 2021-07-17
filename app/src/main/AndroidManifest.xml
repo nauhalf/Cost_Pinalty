@@ -9,8 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LoanPinalty">
-        <activity android:name=".detail.DetailActivity"></activity>
-        <activity android:name=".main.MainActivity">
+        <activity android:name=".ui.add.AddActivity"></activity>
+        <activity android:name=".ui.fee.FeeActivity" />
+        <activity android:name=".ui.detail.DetailActivity" />
+        <activity android:name=".ui.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

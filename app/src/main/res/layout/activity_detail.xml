@@ -12,32 +12,47 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="16dp"
-        tools:context=".detail.DetailActivity">
+        tools:context=".ui.detail.DetailActivity">
 
         <TextView
-            android:id="@+id/tvCostTitle"
+            android:id="@+id/tvNameTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Loan Cost : "
+            android:text="@string/nama_peminjam"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
 
         <TextView
-            android:id="@+id/tvCostValue"
+            android:id="@+id/tvNameValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintLeft_toRightOf="@id/tvCostTitle"
-            app:layout_constraintTop_toTopOf="@id/tvCostTitle" />
+            app:layout_constraintLeft_toRightOf="@id/tvNameTitle"
+            app:layout_constraintTop_toTopOf="@id/tvNameTitle" />
 
+        <TextView
+            android:id="@+id/tvBookNameTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nama_buku"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvNameValue" />
+
+
+        <TextView
+            android:id="@+id/tvBookNameValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/tvBookNameTitle"
+            app:layout_constraintTop_toTopOf="@id/tvBookNameTitle" />
 
         <TextView
             android:id="@+id/tvCreatedDateTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Created At : "
+            android:text="@string/tanggal_pinjam"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvCostTitle" />
+            app:layout_constraintTop_toBottomOf="@id/tvBookNameValue" />
 
 
         <TextView
@@ -52,7 +67,7 @@
             android:id="@+id/tvPinaltyDayTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pinalty Day : "
+            android:text="@string/total_hari_pinjam"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvCreatedDateTitle" />
 
@@ -66,28 +81,12 @@
 
 
         <TextView
-            android:id="@+id/tvPenaltyCostTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Pinalty Cost : "
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvPinaltyDayTitle" />
-
-
-        <TextView
-            android:id="@+id/tvPenaltyCostValue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toRightOf="@id/tvPenaltyCostTitle"
-            app:layout_constraintTop_toTopOf="@id/tvPenaltyCostTitle" />
-
-        <TextView
             android:id="@+id/tvTotalTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Total : "
+            android:text="@string/total_denda"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvPenaltyCostTitle" />
+            app:layout_constraintTop_toBottomOf="@id/tvPinaltyDayValue" />
 
 
         <TextView
@@ -98,10 +97,10 @@
             app:layout_constraintTop_toTopOf="@id/tvTotalTitle" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pay"
-            android:id="@+id/btnPay"
+            android:text="@string/kembalikan"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvTotalTitle" />
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardCornerRadius="10dp"
+    app:strokeColor="#BA000000"
+    app:strokeWidth="1dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/default_margin_padding">
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/tvPenalty"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginEnd="@dimen/default_margin_padding"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Muhammad Naufal Fadhillah" />
+
+        <TextView
+            android:id="@+id/tvBorrowingDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvName"
+            tools:text="12 Januari 2020" />
+
+        <TextView
+            android:id="@+id/tvStrip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_margin_padding"
+            android:text="-"
+            app:layout_constraintStart_toEndOf="@id/tvBorrowingDate"
+            app:layout_constraintTop_toTopOf="@id/tvBorrowingDate" />
+
+        <TextView
+            android:id="@+id/tvDayCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_margin_padding"
+            app:layout_constraintStart_toEndOf="@id/tvStrip"
+            app:layout_constraintTop_toTopOf="@id/tvBorrowingDate"
+            tools:text="0 day(s)" />
+
+        <TextView
+            android:id="@+id/tvPenalty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Rp10.000"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

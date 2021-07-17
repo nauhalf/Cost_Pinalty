@@ -6,6 +6,7 @@ import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+import java.util.UUID;
 
 public class Tools {
     public static String getPriceFormat(double amount, boolean showCurrency) {
@@ -32,5 +33,9 @@ public class Tools {
 
         //Convert long to String
         return (int) differenceDates;
+    }
+
+    public static String generateUUID(){
+        return  UUID.randomUUID().toString();
     }
 }
